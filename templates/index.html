@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="prediction, Agreecultural Production Engine">
+        <title> OPTIMISING AGREECULTURAL PRODUCTION ENGINE</title>
+    </head>
+    <style>
+        input[type= text],select{
+            width: 80%;
+            padding: 12px 20px;
+            margin: inline-block;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-weight: bolder;
+            box-shadow: #000;}
+
+        input[type = submit] {
+            width: 90%;
+            background-color:blueviolet;
+            color: black;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bolder;}
+        input[type=submit]:hover{background-color:aqua;}
+
+        form{
+            border-radius: 15px;
+            padding-top: 5px;
+            font-weight: bolder;
+            animation: alternate;
+            box-sizing: border-box;
+            
+
+        }
+
+        div{
+            border-radius: 5px;
+            margin-left: 35%;
+            width: 30%;
+            }
+        h1{
+            color:white;
+            font-size: 30px;
+            font-weight: bolder;
+            border: transparent;}
+        h2{
+            color:white;
+            font-size: 20px;
+            font-weight: bolder;
+            border: transparent;
+            }
+        h3{
+            color:white;
+            font-size: 60px;
+            font-weight: bolder;
+            border:tomato;
+            }
+        body {
+             background-image: url("static/img/0.jpg");
+             background-color:black;
+             background-repeat: no-repeat;
+             background-size: cover;
+             text-align: center;
+             padding: 0px;
+             }
+    </style>
+        <body>
+            <h1>OPTIMISING AGREECULTURAL PRODUCTION ENGINE</h1>
+            <h2>Created By Shankar Wagh</h2>
+            <div>
+            <form action="{{ url_for('predict')}}" method="post" style="background-color:aliceblue;">
+
+            <label for="N" >Nitrogen</label><br>
+            <input type="text" id = "N" name="N" placeholder="eg. 80" required="required"><br>
+            
+            <label for="P">Phosphourous</label><br>
+            <input type="text" id = "P" name="P" placeholder="eg. 52" required="required"><br>
+
+            <label for="K">Potassiam</label><br>
+            <input type="text" id = "K" name="K" placeholder="eg. 40" required="required"><br>
+
+            <label for="temperature">Temperature(degree in celcius)</label>
+            <input type="text" id = "temperature" name="temperature" placeholder="25" required="required"><br>
+
+            
+            <label for="humidity">Humidity</label><br>
+            <input type="text" id = "humidity" name="humidity" placeholder="eg. 80" required="required"><br>
+
+            <label for="ph">PH</label><br>
+            <input type="text" id="ph" name="ph" placeholder="eg. 6.5" required="required"><br>
+            
+            <label for="rainfall">Rainfall(in mm)</label><br>
+            <input type="text" id = "rainfall" name="rainfall" placeholder="eg. 202" required="required"><br>
+             
+            <input type="submit" value="Check which crop is suitable"box-sizing="40px">
+            </form>
+            </div>
+            <h3>{{ prediction_text }}</h3>
+        </body>
+</html>
